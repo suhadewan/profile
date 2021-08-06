@@ -7,28 +7,16 @@
   "backgroundImageUrl": "http://hdwpro.com/wp-content/uploads/2017/03/Art-Background-Image.png",
   "icons": [
     {
-      "image": "fa-wordpress",
-      "url": "https://mytrashcode.com"
+      "image": "fa-email",
+      "url": "suhad@vt.edu"
     },
     {
       "image": "fa-github",
-      "url": "https://github.com/singhkshitij"
-    },
-    {
-      "image": "fa-twitter",
-      "url": "https://twitter.com/ikshitijsingh"
-    },
-    {
-      "image": "fa-instagram",
-      "url": "https://www.instagram.com/singh_kshitij/"
-    },
-    {
-      "image": "fa-stack-overflow",
-      "url": "https://stackoverflow.com/users/7088832/kshitij-singh"
+      "url": "https://github.com/suhadewan"
     },
     {
       "image": "fa-linkedin",
-      "url": "https://www.linkedin.com/in/ikshitijsingh/"
+      "url": "https://www.linkedin.com/in/suhadewan/"
     }
   ]
 }
