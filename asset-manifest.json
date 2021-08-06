@@ -1,13 +1,13 @@
 {
-  "main.css": "/static/css/main.98650fe3.chunk.css",
-  "main.js": "/static/js/main.ec4a0cbe.chunk.js",
-  "main.js.map": "/static/js/main.ec4a0cbe.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-  "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-  "static/js/2.6cb2980a.chunk.js": "/static/js/2.6cb2980a.chunk.js",
-  "static/js/2.6cb2980a.chunk.js.map": "/static/js/2.6cb2980a.chunk.js.map",
-  "index.html": "/index.html",
-  "precache-manifest.ea42d498a1c29688a635ca1805debc59.js": "/precache-manifest.ea42d498a1c29688a635ca1805debc59.js",
-  "service-worker.js": "/service-worker.js",
-  "static/css/main.98650fe3.chunk.css.map": "/static/css/main.98650fe3.chunk.css.map"
+  "main.css": "/suha-landing-page/static/css/main.98650fe3.chunk.css",
+  "main.js": "/suha-landing-page/static/js/main.381f6f56.chunk.js",
+  "main.js.map": "/suha-landing-page/static/js/main.381f6f56.chunk.js.map",
+  "runtime~main.js": "/suha-landing-page/static/js/runtime~main.52b53593.js",
+  "runtime~main.js.map": "/suha-landing-page/static/js/runtime~main.52b53593.js.map",
+  "static/js/2.6cb2980a.chunk.js": "/suha-landing-page/static/js/2.6cb2980a.chunk.js",
+  "static/js/2.6cb2980a.chunk.js.map": "/suha-landing-page/static/js/2.6cb2980a.chunk.js.map",
+  "index.html": "/suha-landing-page/index.html",
+  "precache-manifest.04c70e776a8de26c67f052892787293b.js": "/suha-landing-page/precache-manifest.04c70e776a8de26c67f052892787293b.js",
+  "service-worker.js": "/suha-landing-page/service-worker.js",
+  "static/css/main.98650fe3.chunk.css.map": "/suha-landing-page/static/css/main.98650fe3.chunk.css.map"
 }
