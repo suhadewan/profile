@@ -1,8 +1,8 @@
 {
   "name": "suha-landing-page",
   "version": "0.1.1",
-  "homepage": "https://dewan-labs.github.io",
-  "private": true,
+  "homepage": "https://dewan-labs.github.io/suha-landing-page",
+  "private": false,
   "dependencies": {
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
