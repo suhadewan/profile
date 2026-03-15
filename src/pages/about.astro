@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About" activeNav="about">
+  <section class="section">
+    <div class="container about-layout">
+      <div class="about-content">
+        <h1>About me</h1>
+        <p class="lead">
+          I'm an AI Engineer based in North Carolina — currently building intelligent systems at Aajil.
+        </p>
+        <p>
+          My work sits at the intersection of machine learning and software engineering.
+          I'm passionate about taking models from research to production and creating
+          AI-powered experiences that genuinely help people.
+        </p>
+        <p>
+          Outside of work, I'm a maker at heart. Right now I'm deep into
+          <strong>crochet</strong> and <strong>pottery</strong> — there's something
+          grounding about working with your hands after a day of working with code.
+          I also love to <strong>travel</strong> and always have a trip in the works.
+        </p>
+        <p>
+          When I'm not making or travelling, I'm probably with my two <strong>cats</strong>.
+          I'm a huge animal lover — I've spent a lot of my time volunteering at my local cat shelter as well as fostering.
+        </p>
+
+        <div class="experience">
+          <h2>Experience</h2>
+          <div class="exp-item">
+            <div class="exp-header">
+              <h3>Artificial Intelligence Engineer</h3>
+              <span class="exp-date">Feb 2025 — Present</span>
+            </div>
+            <p class="exp-company">Aajil</p>
+            <p class="exp-meta">Remote</p>
+          </div>
+          <div class="exp-item">
+            <div class="exp-header">
+              <h3>Data Scientist</h3>
+              <span class="exp-date">Jan 2024 — Feb 2025</span>
+            </div>
+            <p class="exp-company">Aajil</p>
+            <p class="exp-meta">Remote</p>
+          </div>
+          <div class="exp-item">
+            <div class="exp-header">
+              <h3>Software Developer</h3>
+              <span class="exp-date">May 2022 — Jan 2024</span>
+            </div>
+            <p class="exp-company">Aajil</p>
+            <p class="exp-meta">Remote</p>
+          </div>
+        </div>
+
+        <div class="education">
+          <h2>Education</h2>
+          <div class="exp-item">
+            <div class="exp-header">
+              <h3>Virginia Tech, US</h3>
+              <span class="exp-date">Aug 2019 — Dec 2022</span>
+            </div>
+            <p class="exp-company">Bachelor of Engineering, Computer Science</p>
+          </div>
+          <div class="exp-item">
+            <div class="exp-header">
+              <h3>Altrincham Grammar School for Girls, UK</h3>
+              <span class="exp-date">2012 — 2018</span>
+            </div>
+            <p class="exp-company">Maths, Chemistry and Psychology A-Levels</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-layout {
+    max-width: 700px;
+  }
+
+  .about-content h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  .lead {
+    font-size: 1.15rem;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-content p {
+    margin-bottom: 1rem;
+  }
+
+  .about-content strong {
+    color: var(--color-text);
+  }
+
+  .experience {
+    margin-top: 3rem;
+  }
+
+  .experience h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .exp-item {
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.25rem;
+  }
+
+  .exp-date {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+  }
+
+  .exp-company {
+    color: var(--color-accent);
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .exp-meta {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+
+  .education {
+    margin-top: 3rem;
+  }
+
+  .education h2 {
+    margin-bottom: 1.5rem;
+  }
+</style>

@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Home" activeNav="home">
+  <section class="hero">
+    <div class="container">
+      <p class="hero-label">Hi, I'm</p>
+      <h1>Suha Dewan</h1>
+      <p class="hero-subtitle">
+        AI Engineer at <strong>Aajil</strong> — building intelligent systems by day,
+        making things with my hands by night.
+      </p>
+      <div class="hero-cta">
+        <a href="/projects" class="btn btn-primary">View my work</a>
+        <a href="/gallery" class="btn btn-outline">See the gallery</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="highlights">
+        <div class="highlight-item">
+          <h3>Engineer</h3>
+          <p>Working on AI/ML systems at Aajil — from model development to production deployment.</p>
+        </div>
+        <div class="highlight-item">
+          <h3>Maker</h3>
+          <p>Crochet, pottery, and whatever else catches my eye. I love creating with my hands.</p>
+        </div>
+        <div class="highlight-item">
+          <h3>Explorer</h3>
+          <p>Travelling the world, one city at a time. Always looking for the next adventure.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 2rem 0 5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .hero-label {
+    font-size: 1rem;
+    color: var(--color-accent);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 550px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-subtitle strong {
+    color: var(--color-text);
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+  }
+
+  .highlight-item h3 {
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+  }
+
+  .highlight-item p {
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 5rem 0 3rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+  }
+</style>

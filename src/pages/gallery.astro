@@ -1,0 +1,192 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Add your gallery items here — drop images into public/images/gallery/
+const galleryItems = [
+  {
+    src: "/images/gallery/luffy.jpeg",
+    alt: "Crochet Luffy",
+    category: "crochet",
+    title: "Luffy",
+  },
+  {
+    src: "/images/gallery/ramen_bowl1.jpeg",
+    alt: "Ramen bowl pottery piece",
+    category: "pottery",
+    title: "Ramen Bowl",
+    extraImages: ["/images/gallery/ramen_bowl2.jpeg"],
+  },
+  {
+    src: "/images/gallery/appa.jpeg",
+    alt: "Appa mug pottery piece ",
+    category: "pottery",
+    title: "Appa Mug",
+  },
+];
+
+const categories = ["all", ...new Set(galleryItems.map((item) => item.category))];
+---
+
+<BaseLayout title="Gallery" activeNav="gallery">
+  <section class="section">
+    <div class="container">
+      <h1>Gallery</h1>
+      <p style="margin-bottom: 2rem;">Things I've made and places I've been.</p>
+
+      <div class="filter-bar">
+        {categories.map((cat) => (
+          <button
+            class:list={["filter-btn", { active: cat === "all" }]}
+            data-filter={cat}
+          >
+            {cat.charAt(0).toUpperCase() + cat.slice(1)}
+          </button>
+        ))}
+      </div>
+
+      <div class="gallery-grid">
+        {galleryItems.map((item) => {
+          const allImages = [item.src, ...(item.extraImages || [])];
+          const hasMultiple = allImages.length > 1;
+          return (
+            <div
+              class="gallery-item"
+              data-category={item.category}
+              data-images={JSON.stringify(allImages)}
+              data-index="0"
+            >
+              <img src={item.src} alt={item.alt} loading="lazy" />
+              {hasMultiple && (
+                <div class="image-nav">
+                  <button class="nav-arrow prev" aria-label="Previous image">&lsaquo;</button>
+                  <span class="image-count">1 / {allImages.length}</span>
+                  <button class="nav-arrow next" aria-label="Next image">&rsaquo;</button>
+                </div>
+              )}
+              <div class="overlay">
+                <strong>{item.title}</strong>
+                <span>{item.category}</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <p class="gallery-note">
+        Drop your images into <code>public/images/gallery/</code> and update the gallery array in this file.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  h1 {
+    margin-bottom: 0.75rem;
+  }
+
+  .overlay span {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    display: block;
+    margin-top: 0.25rem;
+    text-transform: capitalize;
+  }
+
+  .image-nav {
+    position: absolute;
+    bottom: 0.75rem;
+    right: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    z-index: 2;
+  }
+
+  .nav-arrow {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+
+  .nav-arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .image-count {
+    color: white;
+    font-size: 0.75rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  .gallery-note {
+    margin-top: 3rem;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+
+  .gallery-note code {
+    background: var(--color-accent-light);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+  }
+</style>
+
+<script>
+  // Category filtering
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('.gallery-item');
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+      filterBtns.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      items.forEach((item) => {
+        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+          (item as HTMLElement).style.display = '';
+        } else {
+          (item as HTMLElement).style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Multi-image navigation
+  document.querySelectorAll('.gallery-item').forEach((item) => {
+    const images: string[] = JSON.parse(item.getAttribute('data-images') || '[]');
+    if (images.length <= 1) return;
+
+    const img = item.querySelector('img')!;
+    const countEl = item.querySelector('.image-count')!;
+    const prevBtn = item.querySelector('.prev')!;
+    const nextBtn = item.querySelector('.next')!;
+    let index = 0;
+
+    const update = () => {
+      img.setAttribute('src', images[index]);
+      countEl.textContent = `${index + 1} / ${images.length}`;
+    };
+
+    prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      index = (index - 1 + images.length) % images.length;
+      update();
+    });
+
+    nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      index = (index + 1) % images.length;
+      update();
+    });
+  });
+</script>

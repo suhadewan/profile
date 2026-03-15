@@ -1,0 +1,68 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  activeNav?: string;
+}
+
+const { title, description = "AI Engineer, maker, and explorer.", activeNav } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <title>{title} | Suha Dewan</title>
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <a href="/" class="logo">suha.</a>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="/" class:list={[{ active: activeNav === 'home' }]}>Home</a></li>
+          <li><a href="/about" class:list={[{ active: activeNav === 'about' }]}>About</a></li>
+          <li><a href="/projects" class:list={[{ active: activeNav === 'projects' }]}>Projects</a></li>
+          <li><a href="/gallery" class:list={[{ active: activeNav === 'gallery' }]}>Gallery</a></li>
+          <li><a href="/contact" class:list={[{ active: activeNav === 'contact' }]}>Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; {new Date().getFullYear()} Suha Dewan</p>
+        <ul class="social-links">
+          <li><a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/YOUR-GITHUB" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+      toggle?.addEventListener('click', () => {
+        navLinks?.classList.toggle('open');
+      });
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>
