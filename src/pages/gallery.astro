@@ -22,6 +22,50 @@ const galleryItems = [
     category: "pottery",
     title: "Appa Mug",
   },
+  {
+    src: "/images/gallery/radu.jpg",
+    alt: "Crochet Baby Blanket",
+    category: "crochet",
+    title: "Baby Blanket",
+    extraImages: ["/images/gallery/radu2.jpg"
+    ],
+  },
+  {
+    src: "/images/gallery/naruto.jpeg",
+    alt: "Crochet Naruto & Sasuke",
+    category: "crochet",
+    title: "Naruto & Sasuke",
+    extraImages: ["/images/gallery/naruto2.jpeg", 
+    "/images/gallery/naruto3.jpeg",
+    "/images/gallery/naruto4.jpeg"
+    ],
+  },
+  {
+    src: "/images/gallery/bangladesh/20240104_210914_818.jpg",
+    alt: "Bangladesh 2023",
+    category: "travel",
+    title: "Bangladesh 2023",
+    extraImages: [
+      "/images/gallery/bangladesh/20231202_121909.jpg",
+      "/images/gallery/bangladesh/20231202_141318.jpg",
+      "/images/gallery/bangladesh/20231209_105549.jpg",
+      "/images/gallery/bangladesh/20231209_122231.jpg",
+      "/images/gallery/bangladesh/20231209_134518.jpg",
+      "/images/gallery/bangladesh/20231209_183717_680.jpg",
+      "/images/gallery/bangladesh/20231210_203950_142.jpg",
+      "/images/gallery/bangladesh/20231211_201818_103.jpg",
+      "/images/gallery/bangladesh/20231220_142326_633.jpg",
+      "/images/gallery/bangladesh/20231223_183525_798.jpg",
+      "/images/gallery/bangladesh/20231223_183932_536.jpg",
+      "/images/gallery/bangladesh/20231223_184115_615.jpg",
+      "/images/gallery/bangladesh/20231225_225702_057.jpg",
+      "/images/gallery/bangladesh/20231225_230041_382.jpg",
+      "/images/gallery/bangladesh/20231228_144134_955.jpg",
+      "/images/gallery/bangladesh/20240104_205802_613.jpg",
+      "/images/gallery/bangladesh/20240104_210019_956.jpg",
+      "/images/gallery/bangladesh/20231201_184803.jpg",
+    ],
+  },
 ];
 
 const categories = ["all", ...new Set(galleryItems.map((item) => item.category))];
